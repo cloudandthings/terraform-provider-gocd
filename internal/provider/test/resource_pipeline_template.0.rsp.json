@@ -1,0 +1,14 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://ci.example.com/go/api/admin/templates/template1"
+    },
+    "doc": {
+      "href": "https://api.gocd.org/#template-config"
+    },
+    "find": {
+      "href": "https://ci.example.com/go/api/admin/templates/:template_name"
+    }
+  },
+  "name": "template1"
+}

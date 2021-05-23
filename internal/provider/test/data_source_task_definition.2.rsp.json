@@ -1,0 +1,12 @@
+{
+  "type": "nant",
+  "attributes": {
+    "run_if": [
+      "any"
+    ],
+    "working_directory": "tmp/nant/",
+    "build_file": "./nant.xml",
+    "target": "test-nant",
+    "nant_path": "c:/windows/nant.exe"
+  }
+}

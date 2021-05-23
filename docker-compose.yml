@@ -1,0 +1,26 @@
+version: '3'
+services:
+  gocd-server:
+    build:
+      context: ./
+    deploy:
+      resources:
+        limits:
+         cpus: '1.0'
+         memory: 1G
+    ports:
+     - "8153:8153"
+     - "8154:8154"
+    volumes:
+     - ./godata/server:/godata
+    environment:
+      AGENT_AUTO_REGISTER_KEY: terraform-testing
+  gocd-agent:
+   image: gocd/gocd-agent-ubuntu-16.04:v18.7.0
+   links:
+     - gocd-server:server
+   depends_on:
+     - gocd-server
+   environment:
+     AGENT_AUTO_REGISTER_KEY: terraform-testing
+     GO_SERVER_URL: https://server:8154/go

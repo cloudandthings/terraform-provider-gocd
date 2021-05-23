@@ -1,0 +1,11 @@
+{
+  "type": "rake",
+  "attributes": {
+    "run_if": [
+      "failed"
+    ],
+    "working_directory": "tmp/rake/",
+    "build_file": "./rake.rb",
+    "target": "test-rake"
+  }
+}

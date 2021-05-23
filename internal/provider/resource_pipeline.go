@@ -174,6 +174,7 @@ func resourcePipeline() *schema.Resource {
 										Type:     schema.TypeBool,
 										Optional: true,
 										Computed: true,
+										//Removed:  "The `auto_update` attribute has been disabled until a way to manage updates atomically has been devised.",
 									},
 									"invert_filter": {
 										Type:     schema.TypeBool,
@@ -434,6 +435,7 @@ func readPipelineMaterials(d *schema.ResourceData, materials []gocd.Material) er
 			"attributes": []interface{}{attrs},
 		}
 	}
+
 	if err := d.Set("materials", materialImports); err != nil {
 		return err
 	}

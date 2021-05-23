@@ -3,6 +3,7 @@ package provider
 import (
 	"encoding/json"
 	"github.com/beamly/go-gocd/gocd"
+	"github.com/cloudandthings/terraform-provider-gocd/internal/hashcode"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
 	"strconv"
@@ -164,7 +165,7 @@ func dataSourceGocdStageDefinitionRead(d *schema.ResourceData, meta interface{})
 	}
 	jsonString := string(jsonDoc)
 	d.Set("json", jsonString)
-	d.SetId(strconv.Itoa(hascode{}.String(jsonString)))
+	d.SetId(strconv.Itoa(hashcode.String(jsonString)))
 
 	return nil
 }

@@ -33,3 +33,18 @@ website/vendor
 
 # Keep windows files with windows line endings
 *.winfile eol=crlf
+
+/.idea
+/godata/server
+.DS_Store
+/crash.log
+/terraform-provider-gocd
+/terraform.tfstate
+/terraform.tfstate.backup
+/godata/server/config/cruise-config.xml
+/profile.out
+/dist
+/.terraform
+/coverage.txt
+/gocd.test
+vendor

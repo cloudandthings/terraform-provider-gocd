@@ -1,0 +1,40 @@
+{
+  "name": "stage-name",
+  "fetch_materials": true,
+  "clean_working_directory": false,
+  "never_cleanup_artifacts": false,
+  "approval": {
+    "type": "manual",
+    "authorization": {
+      "users": [
+        "test2",
+        "test1"
+      ],
+      "roles": [
+        "test4",
+        "test3"
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "name": "job-name",
+      "tasks": [
+        {
+          "type": "exec",
+          "attributes": {
+            "run_if": [
+              "passed"
+            ],
+            "command": "/usr/local/bin/terraform",
+            "working_directory": "tmp/",
+            "arguments": [
+              "-debug",
+              "version"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "pluggable",
+  "attributes": {
+    "run_if": [
+      "passed"
+    ],
+    "plugin_configuration": {
+      "id": "plugin.id",
+      "version": "plugin.version"
+    },
+    "configuration": [
+      {
+        "key": "key1",
+        "value": "value1"
+      },
+      {
+        "key": "key2",
+        "value": "value2"
+      }
+    ]
+  }
+}

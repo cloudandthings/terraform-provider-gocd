@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/cloudandthings/terraform-provider-gocd/branch/develop/graph/badge.svg)](https://codecov.io/gh/cloudandthings/terraform-provider-gocd)
+
 # Terraform Provider GoCD
 
 This repository is a *template* for a [Terraform](https://www.terraform.io) provider. It is intended as a starting point for creating Terraform providers, containing:

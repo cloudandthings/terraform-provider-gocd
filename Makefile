@@ -6,6 +6,15 @@ BINARY=terraform-provider-${NAME}
 VERSION=0.2
 OS_ARCH=darwin_amd64
 
+GOFMT_FILES?=./internal/provider ./internal/hashcode
+
+# For local testing, run `make testacc`
+SERVER ?=http://127.0.0.1:8153/go/
+TESTARGS ?= -race -coverprofile=profile.out -covermode=atomic
+
+export GOCD_URL=$(SERVER)
+export GOCD_SKIP_SSL_CHECK=1
+
 default: install
 
 build:
@@ -29,9 +38,26 @@ install: build
 	mkdir -p ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS_ARCH}
 	mv ${BINARY} ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS_ARCH}
 
-test: 
-	go test -i $(TEST) || exit 1                                                   
-	echo $(TEST) | xargs -t -n4 go test $(TESTARGS) -timeout=30s -parallel=4                    
+# ###########################
+# Helpers
+# ###########################
+fmt:
+	go fmt $(GOFMT_FILES)
 
-testacc: 
-	TF_ACC=1 go test $(TEST) -v $(TESTARGS) -timeout 120m   
+# ###########################
+# Testing
+# ###########################
+fmtcheck:
+	@sh -c "'$(CURDIR)/scripts/gofmtcheck.sh'"
+
+test: fmtcheck
+	TF_ACC=1 TESTARGS="$(TESTARGS)" bash ./scripts/go-test.sh
+
+testacc: provision-test-gocd
+	bash scripts/wait-for-test-server.sh
+	TF_ACC=1 $(MAKE) test
+
+provision-test-gocd:
+	cp godata/default.gocd.config.xml godata/server/config/cruise-config.xml
+	docker-compose build --build-arg UID=$(shell id -u) gocd-server
+	docker-compose up -d

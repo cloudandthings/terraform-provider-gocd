@@ -1,0 +1,19 @@
+{
+  "name": "job-name",
+  "tasks": [
+    {
+      "type": "exec",
+      "attributes": {
+        "run_if": [
+          "passed"
+        ],
+        "command": "/usr/local/bin/terraform",
+        "working_directory": "tmp/",
+        "arguments": [
+          "-debug",
+          "version"
+        ]
+      }
+    }
+  ]
+}
