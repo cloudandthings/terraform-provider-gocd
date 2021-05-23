@@ -52,8 +52,8 @@ jobs:
         # list whatever Terraform versions here you would like to support
         terraform:
           - '0.12.29'
-          - '0.13.4'
-          - '0.14.0-beta2'
+          - '0.13.7'
+          - '0.14.11'
     steps:
 
     - name: Set up Go
@@ -80,5 +80,8 @@ jobs:
         # following syntax:
         # SOME_VAR: ${{ secrets.SOME_VAR }}
 
-      run: |
-        go test -v -cover ./internal/provider/
+#      run: |
+#        go test -v -cover ./internal/provider/
+
+       run: |
+         make testacc
