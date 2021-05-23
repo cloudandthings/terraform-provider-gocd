@@ -80,8 +80,5 @@ jobs:
         # following syntax:
         # SOME_VAR: ${{ secrets.SOME_VAR }}
 
-#      run: |
-#        go test -v -cover ./internal/provider/
-
-       run: |
-         make testacc
+      run: |
+        make testacc
