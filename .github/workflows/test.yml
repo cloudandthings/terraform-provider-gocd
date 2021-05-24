@@ -45,7 +45,7 @@ jobs:
     name: Matrix Test
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     strategy:
       fail-fast: false
       matrix:
@@ -70,7 +70,7 @@ jobs:
         go mod download
         
     - name: TF acceptance tests
-      timeout-minutes: 10
+      timeout-minutes: 15
       env:
         TF_ACC: "1"
         TF_ACC_TERRAFORM_VERSION: ${{ matrix.terraform }}
@@ -82,3 +82,5 @@ jobs:
 
       run: |
         make testacc
+        make report_coverage
+        make cleanup

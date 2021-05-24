@@ -61,3 +61,12 @@ provision-test-gocd:
 	cp godata/default.gocd.config.xml godata/server/config/cruise-config.xml
 	docker-compose build --build-arg UID=$(shell id -u) gocd-server
 	docker-compose up -d
+
+report_coverage:
+	bash <(curl -s https://codecov.io/bash)
+
+teardown-test-gocd:
+	rm -f godata/server/config/cruise-config.xml
+	docker-compose down
+
+cleanup: teardown-test-gocd 
