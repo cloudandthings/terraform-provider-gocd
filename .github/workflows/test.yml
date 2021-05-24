@@ -82,5 +82,7 @@ jobs:
 
       run: |
         make testacc
+
+    - name: Report Coverage
+      run: |
         make report_coverage
-        make cleanup

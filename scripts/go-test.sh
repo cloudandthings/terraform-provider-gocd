@@ -8,9 +8,12 @@ echo "" > ${COVERAGE_PATH}
 for d in $(go list ./... | grep -v vendor | grep -v gocd-response-links); do
     go test ${TESTARGS} -v $d
     r=$?
-    if [ $r -ne 0 ]; then
-        exit $r
-    elif [ -f profile.out ]; then
+    if [ $r -eq 1 ]; then
+        # Don't exit here, run all tests
+        echo "[go-test] FAIL ${d}"
+    fi
+    
+    if [ -f profile.out ]; then
         cat profile.out >> ${COVERAGE_PATH}
         rm profile.out
     fi
