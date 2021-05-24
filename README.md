@@ -1,4 +1,5 @@
 [![codecov](https://codecov.io/gh/cloudandthings/terraform-provider-gocd/branch/develop/graph/badge.svg)](https://codecov.io/gh/cloudandthings/terraform-provider-gocd)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcloudandthings%2Fterraform-provider-gocd.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcloudandthings%2Fterraform-provider-gocd?ref=badge_shield)
 
 # Terraform Provider GoCD
 
@@ -62,3 +63,7 @@ In order to run the full suite of Acceptance tests, run `make testacc`.
 ```sh
 $ make testacc
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcloudandthings%2Fterraform-provider-gocd.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcloudandthings%2Fterraform-provider-gocd?ref=badge_large)
