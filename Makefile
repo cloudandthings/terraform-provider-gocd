@@ -63,7 +63,7 @@ provision-test-gocd:
 	docker-compose up -d
 
 report_coverage:
-	bash <(curl -s https://codecov.io/bash)
+	curl -s https://codecov.io/bash | bash -
 
 teardown-test-gocd:
 	rm -f godata/server/config/cruise-config.xml
