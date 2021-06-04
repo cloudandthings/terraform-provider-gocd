@@ -1,0 +1,49 @@
+{
+  "group": "first",
+  "pipeline": {
+    "name": "new_pipeline",
+    "label_template": "${COUNT}",
+    "enable_pipeline_locking": true,
+    "materials": [
+      {
+        "type": "git",
+        "attributes": {
+          "url": "git@github.com:sample_repo/example.git",
+          "destination": "dest",
+          "invert_filter": false,
+          "auto_update": true,
+          "branch": "master",
+          "shallow_clone": true
+        }
+      }
+    ],
+    "stages": [
+      {
+        "name": "defaultStage",
+        "fetch_materials": true,
+        "clean_working_directory": false,
+        "never_cleanup_artifacts": false,
+        "approval": {
+          "type": "success",
+          "authorization": {}
+        },
+        "jobs": [
+          {
+            "name": "defaultJob",
+            "tasks": [
+              {
+                "type": "exec",
+                "attributes": {
+                  "run_if": [
+                    "passed"
+                  ],
+                  "command": "ls"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "label_template": "${COUNT}",
+  "enable_pipeline_locking": true,
+  "name": "new_pipeline",
+  "template": "new-template",
+  "materials": [
+    {
+      "type": "git",
+      "attributes": {
+        "url": "git@github.com:sample_repo/example.git",
+        "destination": "dest",
+        "filter": null,
+        "invert_filter": false,
+        "name": null,
+        "auto_update": true,
+        "branch": "master",
+        "submodule_folder": null,
+        "shallow_clone": true
+      }
+    }
+  ]
+}

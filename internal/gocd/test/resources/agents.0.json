@@ -1,0 +1,13 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://ci.example.com/go/api/agents"
+    },
+    "doc": {
+      "href": "https://api.gocd.org/#agents"
+    }
+  },
+  "_embedded": {
+    "agents": []
+  }
+}
