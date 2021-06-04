@@ -1,0 +1,21 @@
+{
+  "_links": {
+    "doc": {
+      "href": "https://api.gocd.org/#roles"
+    },
+    "find": {
+      "href": "https://ci.example.com/go/api/admin/security/roles/:role_name"
+    },
+    "self": {
+      "href": "https://ci.example.com/go/api/admin/security/roles/my-mock-gocd-role"
+    }
+  },
+  "attributes": {
+    "users": [
+      "user-one",
+      "user-two"
+    ]
+  },
+  "name": "my-mock-gocd-role",
+  "type": "gocd"
+}

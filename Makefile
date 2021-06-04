@@ -6,7 +6,9 @@ BINARY=terraform-provider-${NAME}
 VERSION=0.2
 OS_ARCH=darwin_amd64
 
-GOFMT_FILES?=./internal/provider ./internal/hashcode
+GOFMT_FILES?=./internal/provider ./internal/hashcode ./internal/gocd
+
+GOCD_VERSION?=v21.2.0
 
 # For local testing, run `make testacc`
 SERVER ?=http://127.0.0.1:8153/go/
@@ -51,11 +53,11 @@ fmtcheck:
 	@sh -c "'$(CURDIR)/scripts/gofmtcheck.sh'"
 
 test: fmtcheck
-	TF_ACC=1 TESTARGS="$(TESTARGS)" bash ./scripts/go-test.sh
+	TF_ACC=1 GOCD_ACC=1 TESTARGS="$(TESTARGS)" bash ./scripts/go-test.sh
 
 testacc: provision-test-gocd
 	bash scripts/wait-for-test-server.sh
-	TF_ACC=1 $(MAKE) test
+	TF_ACC=1 GOCD_ACC=1 $(MAKE) test
 
 provision-test-gocd:
 	cp godata/default.gocd.config.xml godata/server/config/cruise-config.xml

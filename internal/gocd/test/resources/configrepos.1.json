@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://ci.example.com/go/api/admin/config_repos"
+    }
+  },
+  "_embedded": {
+    "config_repos": [
+      {
+        "_links": {
+          "self": {
+            "href": "https://ci.example.com/go/api/admin/config_repos/repo1"
+          },
+          "doc": {
+            "href": "https://api.gocd.org/#config-repos"
+          },
+          "find": {
+            "href": "https://ci.example.com/go/api/admin/config_repos/:id"
+          }
+        },
+        "id": "repo1",
+        "plugin_id": "json.config.plugin",
+        "material": {
+          "type": "git",
+          "attributes": {
+            "url": "https://github.com/config-repo/gocd-json-config-example.git",
+            "name": null,
+            "branch": "master",
+            "auto_update": true
+          }
+        },
+        "configuration": [
+        ]
+      }
+    ]
+  }
+}

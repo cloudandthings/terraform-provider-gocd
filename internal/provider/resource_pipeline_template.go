@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"github.com/beamly/go-gocd/gocd"
+	"github.com/cloudandthings/terraform-provider-gocd/internal/gocd"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"strings"
 )
