@@ -2,7 +2,7 @@ package provider
 
 import (
 	"context"
-	"github.com/beamly/go-gocd/gocd"
+	"github.com/cloudandthings/terraform-provider-gocd/internal/gocd"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 

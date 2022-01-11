@@ -1,0 +1,30 @@
+{
+  "name": "template",
+  "stages": [
+    {
+      "name": "defaultStage",
+      "fetch_materials": true,
+      "clean_working_directory": false,
+      "never_cleanup_artifacts": false,
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "defaultJob",
+          "run_instance_count": null,
+          "timeout": 0,
+          "environment_variables": [],
+          "resources": [],
+          "tasks": [
+            {
+              "type": "exec",
+              "attributes": {
+                "command": "sleep",
+                "working_directory": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

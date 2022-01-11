@@ -3,7 +3,7 @@ package provider
 import (
 	"context"
 	"encoding/json"
-	"github.com/beamly/go-gocd/gocd"
+	"github.com/cloudandthings/terraform-provider-gocd/internal/gocd"
 	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
