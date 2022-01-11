@@ -66,5 +66,6 @@ In order to run the full suite of Acceptance tests, run `make testacc`.
 $ make testacc
 ```
 
-## Licence
+## License
+=======
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcloudandthings%2Fterraform-provider-gocd.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcloudandthings%2Fterraform-provider-gocd?ref=badge_large)
